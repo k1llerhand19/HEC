@@ -1,34 +1,55 @@
-<nav class="navbar navbar-expand-lg  bg-dark navbar" id="menu">
+<nav class="navbar navbar-expand-lg " id="menu">
   <a class="navbar-brand" href="#"><img src="{{asset('assets/Images/logo/Logo_HEC.png') }}" width="80" height="80" alt="" ></a>
 
-     <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-          <ul class="navbar-nav navbar-dark mr-auto mt-2 mt-lg-0      ">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        
+    <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <ul class="navbar-nav navbar-dark mr-auto mt-2 mt-lg-0">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse " id="btn">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="btn" href="">Accueil <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item ">
+          <a class=" btn " href="">Équipe</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Saison
+          </a>
+          <div class="dropdown-menu" id="menu-saison-btn" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Classement</a>
+            <a class="dropdown-item" href="#">Calendrier des match</a>
+          </div>
+        </li> 
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Évenement
+          </a>
+          <div class="dropdown-menu" id="menu-saison-btn" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Classement</a>
+            <a class="dropdown-item" href="#">Calendrier des match</a>
+          </div>
+        </li>
 
-        <div class="collapse navbar-collapse " id="btn">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="btn" href="">Accueil <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item ">
-              <a class=" btn " href="">Historique</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn" href="">Démarche</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn" href="">Gallerie</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn" href="">Mention Légale</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn" href="">Plan du site</a>
-            </li>
-          </ul>
-        </div>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Club
+          </a>
+          <div class="dropdown-menu" id="menu-saison-btn" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Histoire</a>
+            <a class="dropdown-item" href="#">Organigramme</a>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="btn" href="">Plan du site</a>
+        </li>
+                
+        
+      </ul>
+    </div>
 
 
 </nav>
