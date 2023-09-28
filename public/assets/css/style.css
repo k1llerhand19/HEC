@@ -14,8 +14,20 @@ body{
     background-color: black;
 }
 
-#droptdown-commission{
-    margin-top: -10px;
-    margin-left: -1px;
+
+
+.dropdown-submenu{
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu{
+    top : 0;
+    left: 100%;
+    background-color: rgb(21, 20, 20);
+}
+
+.dropdown-submenu1 .dropdown-menu{
+    top : 70%;
+    left: 100%;
     background-color: rgb(21, 20, 20);
 }

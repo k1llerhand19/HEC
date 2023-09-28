@@ -11,9 +11,49 @@
         <li class="nav-item active">
           <a class="btn" href="">Accueil <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item ">
-          <a class=" btn " href="">Équipe</a>
-        </li>
+
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Équipe
+        </a>
+        <ul class="dropdown-menu multi" id="menu-saison-btn" aria-labelledby="navbarDropdown">
+          <li class="dropdown-submenu">
+            <a class="dropdown-item dropdown-toggle" href="#">-16</a>
+            <ul class="dropdown-menu" >
+              <li class="dropdown-item">
+                <a href="#">Compétition</a>
+              </li>
+              <li class="dropdown-item">
+                <a href="#">Loisir</a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown-submenu">
+            <a class="dropdown-item dropdown-toggle" href="#">-18</a>
+            <ul class="dropdown-menu" >
+              <li class="dropdown-item">
+                <a href="#">Garçons</a>
+              </li>
+              <li class="dropdown-item">
+                <a href="#">Fille</a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown-submenu">
+            <a class="dropdown-item dropdown-toggle" href="#">-15</a>
+            <ul class="dropdown-menu " >
+              <li class="dropdown-item">
+                <a href="#">Garçons</a>
+              </li>
+              <li class="dropdown-item">
+                <a href="#">Fille</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Saison
@@ -23,6 +63,7 @@
             <a class="dropdown-item" href="#">Calendrier des match</a>
           </div>
         </li> 
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Évenement
@@ -32,6 +73,7 @@
             <a class="dropdown-item" href="#">Journée découverte</a>
           </div>
         </li>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Club
@@ -45,10 +87,11 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Commission
             </a>
-            <div class="dropdown-menu" id="droptdown-commission" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Animation</a>
-              <a class="dropdown-item" href="#">Sponsor</a>
-            </div>
+            <div class="dropdown-submenu1">
+              <div class="dropdown-menu"  aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Animation</a>
+                <a class="dropdown-item" href="#">Sponsor</a>
+              </div>
           </div>
         </li>
        <li class="nav-item dropdown">
@@ -62,11 +105,8 @@
         </li>
         <li class="nav-item">
           <a class="btn" href="">Inscription</a>
-        </li>
-                
-        
+        </li>  
       </ul>
     </div>
-
-
 </nav>
+<script src="assets/Script/Menu.js"></script>
