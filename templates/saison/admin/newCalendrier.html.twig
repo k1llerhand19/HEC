@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminSaisonController!{% endblock %}
+
+{% form_theme form_calendrier 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+<br>
+<div id="text">
+    <div class="container">
+        <center><h1>Calendrier de saison</h1></center>
+    </div>
+    </div>
+    <div class="container">
+        <div class="row" >
+            <div class="col-4" id="colonne-1"></div>
+            <div class="col 4" id="colonne-1"><br><h3>Ajouter :</h3></div>
+        </div>
+        <div class="row" >
+            <div class="col-4" id="colonne-1"></div>
+            <div class="col-4" id="colonne-1" >
+                {{form_start(form_calendrier)}}
+                {{form_row(form_calendrier.nomDoc)}}
+                <button  type="submit" class="btn" id='btnEnregistrer'>Enregistrer</button>
+                {{form_end(form_calendrier)}}
+            </div>
+        </div>
+    </div> 
+</div>
+{% endblock %}
