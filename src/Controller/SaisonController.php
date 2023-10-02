@@ -19,9 +19,9 @@ class SaisonController extends AbstractController
     public function index(SaisonRepository $calendrierRepository): Response
     {
         $showCalendrier  = $calendrierRepository->findOneBy([],['id' => 'DESC']);
+
         return $this->render('saison/index.html.twig', [
-            'controller_name' => 'SaisonController',
-            'showCalendrier'=>$showCalendrier
+            'showCalendrier' => $showCalendrier,
         ]);
     }
 }

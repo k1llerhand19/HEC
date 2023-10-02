@@ -55,7 +55,7 @@ class AdminSaisonController extends AbstractController
             $manager->persist($calendrier);
             $manager->flush();
 
-            return $this->redirectToRoute('app_saison',[
+            return $this->redirectToRoute('saison.calendrier',[
             ]);
         }
 
