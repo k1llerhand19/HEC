@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminPhotosController!{% endblock %}
+
+{% form_theme form_photos 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+    <br>
+    <div class="container">
+        <center><h1>Gallerie photos</h1></center>
+    </div>
+    <div class="container">
+        <div class="row" >
+            <div class="col-4" id="colonne-1"></div>
+            <div class="col 4" id="colonne-1"><br><h3>Ajouter :</h3></div>
+        </div>
+        <div class="row" >
+            <div class="col-4" id="colonne-1"></div>
+            <div class="col-4" id="colonne-1" >
+                {{form_start(form_photos)}}
+                {{form_row(form_photos.nomPhoto)}}
+                <button  type="submit" class="btn" id='btnEnregistrer'>Enregistrer</button>
+                {{form_end(form_photos)}}
+            </div>
+        </div>
+    </div> 
+{% endblock %}

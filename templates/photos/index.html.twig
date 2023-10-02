@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PhotosController!{% endblock %}
+
+{% block body %}
+    <br>
+    <div id="titre">
+        <center><h1>Galerie photos de notre club</h1></center>
+    </div>
+    <div class="col-sm-2"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col p-0" id="colonne-1"></div>
+          <div class="col p-0" id="colonne-2"></div>
+          <div class="col p-0" id="colonne-3"></div>
+        </div>
+      </div>
+
+
+    <script>
+        $(document).ready(function(){
+        let imagesDejaAjoutees = [];
+
+        {% for showImage in showImages %}
+            if (!imagesDejaAjoutees.includes('{{ showImage.nomPhoto }}')) {
+                let colonneLaPlusCourte = null;
+                let nombreImagesColonneLaPlusCourte = Infinity;
+
+                for (let j = 1; j <= 3; j++) {
+                    let colonne = $(`#colonne-${j}`);
+                    let nombreImagesColonne = colonne.find('img').length;
+
+                    if (nombreImagesColonne < nombreImagesColonneLaPlusCourte) {
+                        colonneLaPlusCourte = colonne;
+                        nombreImagesColonneLaPlusCourte = nombreImagesColonne;
+                    }
+                }
+
+                colonneLaPlusCourte.append(`<img src="{{ asset('assets/Images/photos/' ~ showImage.nomPhoto) }}" class="w-100 p-1" id="gallerie">`);
+
+                imagesDejaAjoutees.push('{{ showImage.nomPhoto }}');
+            }
+        {% endfor %}
+    });
+    </script>
+    
+{% endblock %}

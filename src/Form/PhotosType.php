@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\Saison;
+use App\Entity\Photos;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -10,13 +10,13 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 
-class SaisonType extends AbstractType
+class PhotosType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('nomDoc', FileType::class, [
-                'label' => 'Sélectionner le Document',
+            ->add('nomPhoto', FileType::class, [
+                'label' => 'Sélectionner la photo',
     
                 // unmapped means that this field is not associated to any entity property
                 'mapped' => false,
@@ -36,7 +36,7 @@ class SaisonType extends AbstractType
                             'image/jpeg',
                             'image/jpg',
                         ],
-                        'mimeTypesMessage' => 'Veuillez mettre le calendrier en png',
+                        'mimeTypesMessage' => 'Veuillez mettre une photo valide',
                     ])
                 ],
             ])
@@ -46,7 +46,7 @@ class SaisonType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Saison::class,
+            'data_class' => Photos::class,
         ]);
     }
 }
