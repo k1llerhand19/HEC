@@ -17,7 +17,6 @@ class PhotosController extends AbstractController
     {
         $showImages  = $photosRepository->findBy([],['id' => 'DESC']);
         
-       // dd($showImages);
         return $this->render('photos/index.html.twig', [
             'showImages' => $showImages,
         ]);

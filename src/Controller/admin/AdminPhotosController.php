@@ -19,7 +19,7 @@ use App\Form\PhotosType;
 
 class AdminPhotosController extends AbstractController
 {
-    #[Route('/admin/photos/new', name: 'app_admin_photos')]
+    #[Route('/admin/photos/new', name: 'photos.new')]
     public function new(Request $request,  EntityManagerInterface $manager, SluggerInterface $slugger): Response
     {
         $photos = new Photos();

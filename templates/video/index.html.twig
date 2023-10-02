@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello VideoController!{% endblock %}
+
+{% block body %}
+    <br>
+    <div id="titre">
+        <center><h1>Galerie vidéo de notre club</h1></center>
+    </div>
+    <div class="col-sm-2" id="espaceMedia"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col p-0" id="colonne-1"></div>
+          <div class="col p-0" id="colonne-2"></div>
+          <div class="col p-0" id="colonne-3"></div>
+        </div>
+      </div>
+
+    <script>
+        $(document).ready(function(){
+            let videosDejaAjoutees = [];
+
+            {% for showVideo in showVideos %}
+                if (!videosDejaAjoutees.includes('{{ showVideo.nomVideo }}')) {
+                    let colonneLaPlusCourte = null;
+                    let nombreVideosColonneLaPlusCourte = Infinity;
+
+                    for (let j = 1; j <= 3; j++) {
+                        let colonne = $(`#colonne-${j}`);
+                        let nombreVideosColonne = colonne.find('video').length;
+
+                        if (nombreVideosColonne < nombreVideosColonneLaPlusCourte) {
+                            colonneLaPlusCourte = colonne;
+                            nombreVideosColonneLaPlusCourte = nombreVideosColonne;
+                        }
+                    }
+
+                    colonneLaPlusCourte.append(
+                        `<video controls class="w-100 p-1">
+                            <source src="{{ asset('assets/video/' ~ showVideo.nomVideo) }}" type="video/mp4" >
+                            Votre navigateur ne supporte pas la lecture de vidéos.
+                        </video>`
+                    );
+
+                    videosDejaAjoutees.push('{{ showVideo.nomVideo }}');
+                }
+            {% endfor %}
+        });
+    </script>
+{% endblock %}

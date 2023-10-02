@@ -6,6 +6,7 @@
 parameters:
     brochures_directory_calendrier: '%kernel.project_dir%/public/assets/Calendrier'
     brochures_directory_photos: '%kernel.project_dir%/public/assets/Images/photos'
+    brochures_directory_video : '%kernel.project_dir%/public/assets/video'
 services:
     # default configuration for services in *this* file
     _defaults:
