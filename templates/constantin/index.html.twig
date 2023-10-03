@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ConstantinController!{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+        {% if showConstantin is not empty %}
+            <img src="{{asset('assets/Images/Constantin/' ~ showConstantin.nomDoc) }}" class="img-fluid" id="imgConstantin">
+        {% endif %}
+        </div>
+    </div>
+{% endblock %}
