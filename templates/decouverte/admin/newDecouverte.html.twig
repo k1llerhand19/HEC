@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminDecouverteController!{% endblock %}
+
+{% form_theme form_decouverte 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+    <br>
+    <div class="container">
+        <center><h1>Journées découverte</h1></center>
+    </div>
+    <div class="container">
+        <div class="row" >
+            <div class="col-4" id="colonne-1"></div>
+            <div class="col 4" id="colonne-1"><br><h3>Ajouter :</h3></div>
+        </div>
+        <div class="row" >
+            <div class="col-4" id="colonne-1"></div>
+            <div class="col-4" id="colonne-1" >
+                {{form_start(form_decouverte)}}
+                {{form_row(form_decouverte.nomAffiche)}}
+                <button  type="submit" class="btn" id='btnEnregistrer'>Enregistrer</button>
+                {{form_end(form_decouverte)}}
+            </div>
+        </div>
+    </div> 
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HEC Découverte{% endblock %}
+
+{% block body %}
+    <div class="container" id="event">
+        <div class="row">
+        {% if showDecouverte is not empty %}
+            <img src="{{asset('assets/Images/Decouverte/' ~ showDecouverte.nomAffiche) }}" class="img-fluid" id="imgEvent">
+        {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
