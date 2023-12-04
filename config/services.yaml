@@ -9,6 +9,7 @@ parameters:
     brochures_directory_video : '%kernel.project_dir%/public/assets/video'
     brochures_directory_constantin : '%kernel.project_dir%/public/assets/Images/Constantin'
     brochures_directory_decouverte : '%kernel.project_dir%/public/assets/Images/Decouverte'
+    brochures_directory_photos_identite : '%kernel.project_dir%/public/assets/Images/photosId'
 services:
     # default configuration for services in *this* file
     _defaults:

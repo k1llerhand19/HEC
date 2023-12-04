@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminOrganigrameController!{% endblock %}
+
+{% form_theme form_organigrame 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+    <br>
+    <div class="container">
+        <center><h1>Organigramme</h1></center>
+    </div>
+    <div class="container">
+        <div class="row" >
+            <div class="col-4" id="colonne-1"></div>
+            <div class="col 4" id="colonne-1"><br><h3>Ajouter :</h3></div>
+        </div>
+        <div class="row" >
+            <div class="col-4" id="colonne-1"></div>
+            <div class="col-4" id="colonne-1" >
+                {{form_start(form_organigrame)}}
+                {{form_row(form_organigrame.Role)}}
+                {{form_row(form_organigrame.Nom)}}
+                {{form_row(form_organigrame.Prenom)}}
+                {{form_row(form_organigrame.Text)}}
+                {{form_row(form_organigrame.nom_photos)}}
+                <button  type="submit" class="btn" id='btnEnregistrer'>Enregistrer</button>
+                {{form_end(form_organigrame)}}
+            </div>
+        </div>
+    </div> 
+{% endblock %}
