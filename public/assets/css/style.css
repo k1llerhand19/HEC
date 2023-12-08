@@ -1,19 +1,48 @@
+:root {
+    /* Couleurs principales */
+    --couleur-principale: #1a1a1a; /* Gris foncé */
+    --couleur-secondaire: #2d2d2d; /* Gris moyen */
+
+    /* Couleurs de fond */
+    --couleur-fond: #f5f5f5; /* Gris très clair */
+    --couleur-fond-section: #e0e0e0; /* Gris clair */
+
+    --couleur-btnEnregistrer: #4285f4; /* Bleu */
+    --couleur-titre: #333333; /* Gris foncé */
+
+    /* Couleurs de l'association */
+    --couleur-association-noir: #000000; /* Noir */
+    --couleur-association-blanc: #ffffff; /* Blanc */
+    --couleur-association-rouge: #d9534f; /* Rouge clair */
+    --couleur-association-bleu: #337ab7; /* Bleu clair */
+
+    /* Couleurs de texte */
+    --couleur-texte-principale: #333333; /* Noir légèrement plus clair */
+    --couleur-texte-secondaire: #555555; /* Gris moyen */
+    --couleur-texte-btn: white;
+
+    --box-shadow: rgba(0, 0, 0, 0.1);
+}
+
 body{
     min-height: 100vh;
-    background: linear-gradient(to bottom, white, black);
+    background: var(--couleur-fond);
     background-repeat: no-repeat;
+
 }
+
+
 /*Menu*/
 .navbar {
-    background-color: black;
+    background-color: var(--couleur-secondaire);
 }
 
 #btn a{
-    color: white;
+    color: var(--couleur-texte-btn) ;
 }
 
 #menu-saison-btn{
-    background-color: black;
+    background-color: var(--couleur-secondaire);
 }
 
 
@@ -25,30 +54,30 @@ body{
 .dropdown-submenu .dropdown-menu{
     top : 0;
     left: 100%;
-    background-color: rgb(21, 20, 20);
+    background-color:var(--couleur-secondaire);
 }
 
 .dropdown-submenu1 .dropdown-menu{
     top : 70%;
     left: 100%;
-    background-color: rgb(21, 20, 20);
+    background-color: var(--couleur-secondaire);
 }
 
 /* Saison */
 
 #btnEnregistrer{
-    background-color: rgb(18, 98, 2);
+    background-color: var(--couleur-btnEnregistrer);
 }
 
 #titre h1{
-    color: red;
+    color: var(--couleur-titre);
 }
 
 /* Média */
 #gallerie{
     margin-bottom:20px;
     border-radius: 20px;
-    box-shadow: 5px 5px 5px rgb(237, 236, 236);
+    box-shadow: 5px 5px 5px var(--box-shadow);
 }
 
 #espaceMedia{
@@ -58,7 +87,7 @@ body{
 video {
     margin-bottom:20px;
     border-radius: 20px;
-    box-shadow: 5px 5px 5px rgb(237, 236, 236);
+    box-shadow: 5px 5px 5px var(--box-shadow);
 }
 
 /* Evenement */
@@ -72,3 +101,35 @@ video {
 #event{
     margin-top: 10px;
 }
+
+.section-title{
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+
+.table-responsive th{
+        background-color: #f9f9f9;
+        border: 1px solid var(--couleur-association-noir);
+        margin: 10px;
+        border-bottom: 1px solid var(--couleur-association-noir);
+        padding: 0;
+        
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 1px solid var(--couleur-association-noir);
+}
+
+#text-taille{
+    font-size: 10px
+}
+
+#imagetable{
+    border-radius: 50%;
+    width: 100%; 
+    height: auto;
+}
+
+

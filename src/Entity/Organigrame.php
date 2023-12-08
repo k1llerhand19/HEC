@@ -27,7 +27,7 @@ class Organigrame
     private ?string $Text = null;
 
     #[ORM\Column(length: 50)]
-    private ?string $Nom_Photos = null;
+    public ?string $nom_photos = null;
 
     public function getId(): ?int
     {
@@ -87,9 +87,9 @@ class Organigrame
         return $this->Nom_Photos;
     }
 
-    public function setNomPhotos(string $Nom_Photos): static
+    public function setNomPhotos(string $nom_photos): static
     {
-        $this->Nom_Photos = $Nom_Photos;
+        $this->Nom_Photos = $nom_photos;
 
         return $this;
     }
