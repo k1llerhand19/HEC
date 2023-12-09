@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AdminOrganigrameController!{% endblock %}
+{% block title %}Admin Organigrame !{% endblock %}
 
 {% form_theme form_organigrame 'bootstrap_4_layout.html.twig' %}
 
@@ -22,7 +22,7 @@
                 {{form_row(form_organigrame.Nom)}}
                 {{form_row(form_organigrame.Prenom)}}
                 {{form_row(form_organigrame.Text)}}
-                {{form_row(form_organigrame.nom_photos)}}
+                {{form_row(form_organigrame.Nom_Photos)}}
                 <button  type="submit" class="btn" id='btnEnregistrer'>Enregistrer</button>
                 {{form_end(form_organigrame)}}
             </div>

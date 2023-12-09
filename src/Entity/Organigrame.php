@@ -27,7 +27,7 @@ class Organigrame
     private ?string $Text = null;
 
     #[ORM\Column(length: 50)]
-    public ?string $nom_photos = null;
+    public ?string $Nom_Photos = null;
 
     public function getId(): ?int
     {

@@ -19,11 +19,11 @@ class OrganigrameType extends AbstractType
             ->add('Nom')
             ->add('Prenom')
             ->add('Text')
-            ->add('nom_photos', FileType::class, [
+            ->add('Nom_Photos', FileType::class, [
                 'label' => 'Sélectionner la photos',
     
                 // unmapped means that this field is not associated to any entity property
-                'mapped' => false,
+                'mapped' => true,
     
                 // make it optional so you don't have to re-upload the PDF file
                 // every time you edit the Product details

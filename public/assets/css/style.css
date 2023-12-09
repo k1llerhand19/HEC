@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 :root {
     /* Couleurs principales */
     --couleur-principale: #1a1a1a; /* Gris foncé */
@@ -28,7 +30,13 @@ body{
     min-height: 100vh;
     background: var(--couleur-fond);
     background-repeat: no-repeat;
+    line-height: 1.25;
 
+}
+
+*{
+    font-family: 'Kanit', sans-serif;
+    font-weight: 200; 
 }
 
 
@@ -40,7 +48,6 @@ body{
 #btn a{
     color: var(--couleur-texte-btn) ;
 }
-
 #menu-saison-btn{
     background-color: var(--couleur-secondaire);
 }
@@ -108,22 +115,32 @@ video {
 }
 
 
-.table-responsive th{
+.table-org th{
         background-color: #f9f9f9;
         border: 1px solid var(--couleur-association-noir);
         margin: 10px;
         border-bottom: 1px solid var(--couleur-association-noir);
         padding: 0;
+        height: 300px;
         
 }
 
-.table thead th {
+.table-org thead th {
     vertical-align: bottom;
     border-bottom: 1px solid var(--couleur-association-noir);
 }
 
 #text-taille{
-    font-size: 10px
+    font-size: 15px;
+    text-align:justify;
+    width: calc(100% - 30px);
+    margin-left: 15px;
+}
+#textPre{
+    font-size: 15px !important;
+    text-align:justify;
+    width: calc(100% - 30px);
+    margin-left: 15px;
 }
 
 #imagetable{
@@ -132,4 +149,20 @@ video {
     height: auto;
 }
 
+.table-equipe {
+    border-collapse: collapse;
+    width: 100%;
+}
+.table-equipe th, .table-equipe td {
+    border: 1px solid var(--couleur-association-noir);
+    padding: 8px; 
+}
 
+.table-equipe thead th {
+    border-bottom: 2px solid var(--couleur-association-noir); 
+}
+
+#imageEquipe{
+    border-radius: 100px;
+    margin-bottom: 1.5em;
+}

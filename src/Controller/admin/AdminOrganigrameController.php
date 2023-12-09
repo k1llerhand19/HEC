@@ -22,16 +22,16 @@ class AdminOrganigrameController extends AbstractController
     #[Route('/admin/organigrame/new', name: 'organigrame.new')]
     public function AjouterOrganigrame(Request $request,  EntityManagerInterface $manager, SluggerInterface $slugger): Response
     {   $organigrame = new Organigrame();
-        $form_organigrame = $this->createForm(organigrameType::class,$organigrame);
+        $form_organigrame = $this->createForm(OrganigrameType::class, $organigrame);
         $form_organigrame -> handleRequest($request);
+        
     
         if( $form_organigrame->isSubmitted() && $form_organigrame->isValid()){
 
-            $brochureFilePhotos = $form_organigrame->get('nom_photos')->getData();
+            $brochureFilePhotos = $form_organigrame->get('Nom_Photos')->getData();
 
             if ($brochureFilePhotos) {
                 $originalFilename = pathinfo($brochureFilePhotos->getClientOriginalName(), PATHINFO_FILENAME);
-                // this is needed to safely include the file name as part of the URL
                 $safeFilename = $slugger->slug($originalFilename);
                 $newFilename = $safeFilename.'-'.uniqid().'.'.$brochureFilePhotos->guessExtension();
 
@@ -41,20 +41,26 @@ class AdminOrganigrameController extends AbstractController
                         $newFilename
                     );
                 } catch (FileException $e) {
-                    // ... handle exception if something happens during file upload
                 }
 
+                // Stockez le nom du fichier dans l'entité Organigrame
                 $organigrame->setNomPhotos($newFilename);
+                //dd($organigrame);
+
+            } else {
+                // Gérez le cas où le fichier est manquant
+                $this->addFlash('error', 'Veuillez sélectionner un fichier.');
+                return $this->redirectToRoute('organigrame.new');
             }
+
             $manager->persist($organigrame);
             $manager->flush();
-
-            return $this->redirectToRoute('app_organigrame',[
-            ]);
+            return $this->redirectToRoute('app_organigrame', []);
         }
 
         return $this->render('organigrame/admin/NewOrganigrame.html.twig', [
             'form_organigrame' => $form_organigrame->createView()
+            
         ]);
     }
 }

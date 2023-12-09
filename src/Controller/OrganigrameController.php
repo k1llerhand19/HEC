@@ -19,6 +19,7 @@ class OrganigrameController extends AbstractController
 
         $showOrganigrame1  = $organigrameRepository->find(1);
         $organigrammes = $organigrameRepository->findBy([], ['id' => 'ASC'], null, 1);
+        
         return $this->render('organigrame/index.html.twig', [
             'controller_name' => 'OrganigrameController',
             'showOrganigrame' => $organigrammes,

@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HEC Organigrame{% endblock %}
+
+{% block body %}
+    <section id="Equipe" class="Equipe section-bg">
+    <center>
+        <div class="container aos-init aos-animate" data-aos="fade-up">
+            <div class="section-title" id="titre" >
+                <h1>HEC</h1>
+            </div>
+            <div class="row">
+                {% if showEquipe is not empty %}
+                    <div class="col-lg-6">
+                        <h2>{{ showEquipe.TitreEquipe }}</h2>
+                        <div class="table-responsive table-equipe">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th class="align-middle text-center">Horaire</th>
+                                        <th class="align-middle text-center">Lieu</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                        <tr>
+                                            <td class="align-middle text-center">{{ showEquipe.Jour1 }} {{ showEquipe.Horaire.format('H:i') }}</td>
+                                            <td class="align-middle text-center">{{ showEquipe.Lieu }}</td>
+                                        </tr>
+                                        {% if showEquipe.Jour2 is not empty %}
+                                            <tr>
+                                                <td class="align-middle text-center">{{ showEquipe.Jour2 }} {{ showEquipe.Horaire2.format('H:i') }}</td>
+                                                <td class="align-middle text-center">{{ showEquipe.Lieu }}</td>
+                                            </tr>
+                                        {% endif %}
+                                </tbody>
+                            </table>
+                        </div> 
+                        <img src="{{ asset('assets/Images/photosCoach/' ~ showEquipe.photoId) }}" class="w-25 p-1" id="imagetable"> 
+                        <br> 
+                        <h3>
+                            {{ showEquipe.Nom }} <br> {{ showEquipe.Prenom }} <br> 
+                        </h3>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="{{ asset('assets/Images/photosEquipe/' ~ showEquipe.photoEquipe) }}" class="w-100 p-1" id="imageEquipe"> <br>
+                        <h4>{{ showEquipe.categorieEngagee }}</h4>
+                    </div>
+                    
+                {% endif %}
+            </div>
+            
+
+            
+
+        </div>
+    </center>
+    </section>
+    
+{% endblock %}

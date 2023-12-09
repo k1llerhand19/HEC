@@ -21,11 +21,14 @@
               <a class="dropdown-item dropdown-toggle" href="#">+16</a>
               <ul class="dropdown-menu" >
                 <li class="dropdown-item">
-                  <a href="#">Compétition</a>
+                  <a href="{{path('app_equipe' , {'Equipe': '1'})}}">Compétition</a>
                 </li>
-                <li class="dropdown-item">
-                  <a href="#">Loisir</a>
-                </li>
+                <form action="{{ path('app_equipe') }}" method="post">
+                    <input type="hidden" name="Equipe" value="2">
+                    <button type="submit" style="border: none; background: none; cursor: pointer; color: white;">
+                        Loisir
+                    </button>
+                </form>
               </ul>
             </li>
             <li class="dropdown-submenu">

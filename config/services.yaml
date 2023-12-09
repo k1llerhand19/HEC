@@ -10,6 +10,9 @@ parameters:
     brochures_directory_constantin : '%kernel.project_dir%/public/assets/Images/Constantin'
     brochures_directory_decouverte : '%kernel.project_dir%/public/assets/Images/Decouverte'
     brochures_directory_photos_identite : '%kernel.project_dir%/public/assets/Images/photosId'
+    brochures_directory_photos_Coach : '%kernel.project_dir%/public/assets/Images/photosCoach'
+    brochures_directory_photos_Equipe : '%kernel.project_dir%/public/assets/Images/photosEquipe'
+
 services:
     # default configuration for services in *this* file
     _defaults:

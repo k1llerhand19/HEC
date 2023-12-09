@@ -1,39 +1,44 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}HECOrganigrame{% endblock %}
+{% block title %}HEC Organigrame{% endblock %}
 
 {% block body %}
     <section id="competences" class="competences section-bg">
     <center>
         <div class="container aos-init aos-animate" data-aos="fade-up">
             <div class="section-title" id="titre" >
-                <h1>Compétences</h1>
+                <h1>Organigramme</h1>
             </div>
-            <div class="col-lg-10">
+            <div class="row">
             {% if showOrganigrame1 is not empty %}
+            <center>
+            <div class="col-lg-10">
                 <div class="table-responsive">
                     <table class="table ">
                         <thead>
                         <tr>
-                            <th class="align-middle text-center"><img src="{{ asset('assets/Images/photosId/' ~ showOrganigrame1.nom_photos) }}" class="w-100 p-1" id="imagetable">{{ showOrganigrame1.nom }}<br> {{ showOrganigrame1.prenom }} </th>
-                            <th class="align-middle text-center"><h2>{{ showOrganigrame1.Role }}</h2> <p>{{ showOrganigrame1.text }}</p></th>
+                            <th class="align-middle text-center"><img src="{{ asset('assets/Images/photosId/' ~ showOrganigrame1.Nom_Photos) }}" class="w-100 p-1" id="imagetable">{{ showOrganigrame1.nom }}<br> {{ showOrganigrame1.prenom }} </th>
+                            <th class="align-middle text-center"><h2 id='titrePres'>{{ showOrganigrame1.Role }}</h2> <p id="textPre">{{ showOrganigrame1.text }}</p></th>
                         </tr>
                         </thead>
                     </table>
                 </div>
+            </div>
+            </center>
             {% endif %}
             </div>
+            
 
             <div class="row">
                 {% for Organigrame in showOrganigrame %}
-                    <div class="col-lg-6 col-md-6 col-sm-12">
-                        <div class="table-responsive">
+                    <div class="col-lg-6">
+                        <div class="table-responsive table-orga">
                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th class="align-middle text-center">
-                                            <img src="{{ asset('assets/Images/photosId/' ~ Organigrame.nom_photos) }}" class="w-100 p-1" id="imagetable">
-                                            {{ Organigrame.nom }} <br> {{ Organigrame.prenom }}
+                                            <img src="{{ asset('assets/Images/photosId/' ~ Organigrame.Nom_Photos) }}" class="w-100 p-1" id="imagetable">
+                                           <span class="small">{{ Organigrame.nom }} <br> {{ Organigrame.prenom }}</span>
                                         </th>
                                         <th class="align-middle text-center">
                                             <h2>{{ Organigrame.Role }}</h2>

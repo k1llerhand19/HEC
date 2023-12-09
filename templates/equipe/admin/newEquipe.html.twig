@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin Equipe !{% endblock %}
+
+{% form_theme form_equipe 'bootstrap_4_layout.html.twig' %}
+
+{% block body %}
+    <br>
+    <div class="container">
+        <center><h1>Equipe</h1></center>
+    </div>
+    <div class="container">
+        <div class="row" >
+            <div class="col-4" id="colonne-1"></div>
+            <div class="col 4" id="colonne-1"><br><h3>Ajouter :</h3></div>
+        </div>
+        <div class="row" >
+            <div class="col-4" id="colonne-1"></div>
+            <div class="col-4" id="colonne-1" >
+                {{form_start(form_equipe)}}
+                {{form_row(form_equipe.TitreEquipe)}}
+                {{form_row(form_equipe.jour1)}}
+                {{form_row(form_equipe.Horaire)}}
+                {{form_row(form_equipe.Jour2)}}
+                {{form_row(form_equipe.Horaire2)}}
+                {{form_row(form_equipe.Lieu)}}
+                {{form_row(form_equipe.PhotoId)}}
+                {{form_row(form_equipe.Nom)}}
+                {{form_row(form_equipe.Prenom)}}
+                {{form_row(form_equipe.PhotoEquipe)}}
+                {{form_row(form_equipe.CategorieEngagee)}}
+                <button  type="submit" class="btn" id='btnEnregistrer'>Enregistrer</button>
+                {{form_end(form_equipe)}}
+            </div>
+        </div>
+    </div> 
+{% endblock %}
